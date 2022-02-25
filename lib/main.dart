@@ -4,6 +4,7 @@ import 'package:drawer/screens/screen_pofile.dart';
 import 'package:flutter/material.dart';
 import 'const/const.dart';
 import 'package:get/get.dart';
+//import 'package:drawer/utils/utils.dart' ;
 
 void main() => runApp(const MyApp());
 
@@ -63,32 +64,16 @@ class HomePage extends StatelessWidget{
             ),
             ),
 
-
             for (int index=0; index<menuItemList.length; index++)
               drawerMenu(index, menuItemList[index], iconList[index]),
 
-
-
-
-            /*ListView.builder(
-                itemCount: menuItemList.length,
-                itemBuilder: (context,index) {
-                  return drawerMenu(menuItemList[index], iconList[index]);
-                }
-            ),*/
           ],
         ),
-
-
-
-
-
-
         ),
     );
   }
 
-  drawerMenu(int index, String title , IconData icon) {
+  drawerMenu(index, title , icon) {
     return Padding(
       padding: EdgeInsets.zero,
       child: ListTile(
@@ -97,13 +82,13 @@ class HomePage extends StatelessWidget{
         onTap: (){
           switch(index) {
             case 0:
-              Get.to(MainScreen());
+              Get.to(const MainScreen());
               break;
             case 1:
-              Get.to(Profile());
+              Get.to(const Profile());
               break;
             case 2:
-             Get.to(LogOut());
+              Get.to(const LogOut());
               break;
           }
         },
